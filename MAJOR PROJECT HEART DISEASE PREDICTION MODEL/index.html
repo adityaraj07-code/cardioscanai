@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CardioScan AI</title>
+    <meta name="description" content="CardioScan AI - a static heart disease prediction website" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="navbar">
+        <a href="#home" class="brand">CardioScan AI</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#predict">Prediction</a>
+          <a href="#graphs">Graphs</a>
+          <a href="#tips">Tips</a>
+          <button id="themeToggle" class="theme-btn" type="button">🌙 Dark Mode</button>
+        </div>
+      </nav>
+
+      <div class="hero-content" id="home">
+        <div class="hero-text reveal">
+          <p class="eyebrow">AI-POWERED HEART SCREENING</p>
+          <h1>Smart Heart Disease Prediction at a Glance</h1>
+          <p>
+            CardioScan AI presents a modern and professional static website for a
+            heart disease prediction project. It combines a stylish UI with clear
+            insights and visual summaries from the model.
+          </p>
+          <a class="btn primary" href="#predict">Try the Prediction</a>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <strong>24/7</strong>
+              <span>Awareness</span>
+            </div>
+            <div class="stat-card">
+              <strong>100%</strong>
+              <span>Static</span>
+            </div>
+            <div class="stat-card">
+              <strong>2+</strong>
+              <span>Visual Models</span>
+            </div>
+            <div class="stat-card">
+              <strong>AI</strong>
+              <span>Risk Demo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <h3>Project Highlights</h3>
+          <ul>
+            <li>Modern static website design</li>
+            <li>Dark and light mode toggle</li>
+            <li>Prediction section with a risk demo</li>
+            <li>Confusion Matrix and ROC Curve visuals</li>
+            <li>Extra storytelling sections and wellness tips</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section">
+        <div class="section-header reveal">
+          <p class="eyebrow">About</p>
+          <h2>About the Project</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="card reveal">
+            <h3>What this site shows</h3>
+            <p>
+              This website is designed to showcase a heart disease prediction concept in a
+              professional and visually appealing way. It highlights the purpose of the model,
+              its evaluation visuals, and an easy-to-understand risk form.
+            </p>
+          </div>
+
+          <div class="card developer-card reveal">
+            <h3>Developer</h3>
+            <p><strong>Aditya Raj</strong></p>
+            <p>Student / Developer</p>
+            <p>Email: <a href="mailto:aadi918606@gmail.com">aadi918606@gmail.com</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Features</p>
+          <h2>Why this website feels extraordinary</h2>
+        </div>
+
+        <div class="step-grid">
+          <div class="step-card reveal">
+            <h3>01. Premium Design</h3>
+            <p>Clean layouts, striking colors, and smooth spacing make the page feel polished and modern.</p>
+          </div>
+          <div class="step-card reveal">
+            <h3>02. Interactive Demo</h3>
+            <p>The risk form gives visitors a simple and engaging way to understand the prediction idea.</p>
+          </div>
+          <div class="step-card reveal">
+            <h3>03. Insightful Visuals</h3>
+            <p>Confusion matrix and ROC curve sections make the model feel more professional and understandable.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="predict" class="section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Prediction Demo</p>
+          <h2>Heart Risk Check</h2>
+        </div>
+
+        <div class="form-grid">
+          <form id="riskForm" class="form-card reveal">
+            <label>
+              Age
+              <input type="number" id="age" min="18" max="100" required />
+            </label>
+            <label>
+              Gender
+              <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </label>
+            <label>
+              Chest Pain
+              <select id="chestPain">
+                <option value="typical">Typical Angina</option>
+                <option value="atypical">Atypical Angina</option>
+                <option value="non-anginal">Non-Anginal</option>
+                <option value="asymptomatic">Asymptomatic</option>
+              </select>
+            </label>
+            <label>
+              Blood Pressure
+              <input type="number" id="bp" min="80" max="220" required />
+            </label>
+            <label>
+              Cholesterol
+              <input type="number" id="cholesterol" min="100" max="500" required />
+            </label>
+            <label>
+              Fasting Sugar > 120
+              <select id="fbs">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </label>
+            <label>
+              Max Heart Rate
+              <input type="number" id="heartRate" min="60" max="220" required />
+            </label>
+            <label>
+              Exercise Angina
+              <select id="angina">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </label>
+            <button type="submit" class="btn primary">Check Risk</button>
+          </form>
+
+          <div id="resultBox" class="result-card reveal">
+            <h3>Prediction Result</h3>
+            <p class="result-label">Your result will appear here.</p>
+            <div class="risk-meter">
+              <div id="riskBar"></div>
+            </div>
+            <p id="riskMessage" class="result-message"></p>
+            <p id="riskAdvice" class="result-advice"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="graphs" class="section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Model Visuals</p>
+          <h2>Graphs from the prediction model</h2>
+        </div>
+
+        <div class="graph-grid">
+          <div class="graph-card reveal">
+            <h3>Confusion Matrix</h3>
+            <svg viewBox="0 0 400 280" class="graph-svg" role="img" aria-label="Confusion Matrix graph">
+              <rect x="40" y="40" width="320" height="200" rx="12" fill="var(--graph-panel)" stroke="var(--graph-line)" />
+              <rect x="80" y="80" width="120" height="80" fill="#4f8cff" />
+              <rect x="200" y="80" width="120" height="80" fill="#f2b84b" />
+              <rect x="80" y="160" width="120" height="80" fill="#f2b84b" />
+              <rect x="200" y="160" width="120" height="80" fill="#4f8cff" />
+              <line x1="40" y1="40" x2="360" y2="240" stroke="var(--graph-line)" stroke-width="2" stroke-dasharray="6 6" />
+              <text x="80" y="70" fill="var(--text-primary)">TP</text>
+              <text x="200" y="70" fill="var(--text-primary)">FP</text>
+              <text x="80" y="150" fill="var(--text-primary)">FN</text>
+              <text x="200" y="150" fill="var(--text-primary)">TN</text>
+            </svg>
+            <p>Shows how many cases were correctly and incorrectly classified.</p>
+          </div>
+
+          <div class="graph-card reveal">
+            <h3>ROC Curve</h3>
+            <svg viewBox="0 0 400 280" class="graph-svg" role="img" aria-label="ROC curve graph">
+              <line x1="40" y1="220" x2="340" y2="220" stroke="var(--graph-line)" stroke-width="2" />
+              <line x1="40" y1="220" x2="40" y2="40" stroke="var(--graph-line)" stroke-width="2" />
+              <path d="M40 220 C90 180, 140 140, 180 120 S280 70, 340 40" fill="none" stroke="#4f8cff" stroke-width="4" />
+              <path d="M40 220 L340 40" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="6 6" />
+              <circle cx="180" cy="120" r="5" fill="#ff6b6b" />
+              <circle cx="340" cy="40" r="5" fill="#4f8cff" />
+              <text x="190" y="240" fill="var(--text-primary)">False Positive Rate</text>
+              <text x="8" y="130" transform="rotate(-90 8 130)" fill="var(--text-primary)">True Positive Rate</text>
+            </svg>
+            <p>Highlights the model’s ability to distinguish positive and negative classes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tips" class="section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Wellness Tips</p>
+          <h2>Small habits that support a healthier heart</h2>
+        </div>
+
+        <div class="tips-grid">
+          <div class="tip-card reveal">
+            <h3>Stay Active</h3>
+            <p>Regular light exercise can make a big difference in long-term heart health.</p>
+          </div>
+          <div class="tip-card reveal">
+            <h3>Eat Smart</h3>
+            <p>Balanced meals with less processed food can support better cardiovascular wellness.</p>
+          </div>
+          <div class="tip-card reveal">
+            <h3>Sleep Well</h3>
+            <p>Good sleep habits help maintain healthy blood pressure and stress levels.</p>
+          </div>
+          <div class="tip-card reveal">
+            <h3>Check Regularly</h3>
+            <p>Routine health checks can help spot risks early and support better care.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>CardioScan AI © 2026 | Static Website for Heart Disease Prediction</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
